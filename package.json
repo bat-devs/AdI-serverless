@@ -1,0 +1,42 @@
+{
+  "name": "adi-serverless",
+  "version": "1.0.0",
+  "description": "Academia de Investimento Serverless",
+  "main": "server.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "dev": "nodemon --config nodemon.json src/server.ts",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bat-devs/AdI-serverless.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "bat-devs",
+  "license": "ISC",
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  },
+  "bugs": {
+    "url": "https://github.com/bat-devs/AdI-serverless/issues"
+  },
+  "homepage": "https://github.com/bat-devs/AdI-serverless#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.17",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.9",
+    "@types/nodemailer": "^6.4.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}

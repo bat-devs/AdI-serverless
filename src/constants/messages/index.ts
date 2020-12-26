@@ -1,0 +1,1 @@
+export { default as welcomeMessage } from './welcome-message';
