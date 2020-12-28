@@ -1,10 +1,12 @@
 import express from "express";
+import cors from "cors";
 // import * as httpStatus from 'http-status';
 import * as bodyParser from "body-parser";
 import Mail from "./services/mail";
 import { welcomeMessage } from "./constants/messages";
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 const routes = () => {
