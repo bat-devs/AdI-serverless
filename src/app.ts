@@ -1,9 +1,20 @@
 import express from "express";
 import cors from "cors";
-// import * as httpStatus from 'http-status';
 import * as bodyParser from "body-parser";
+
 import Mail from "./services/mail";
-import { welcomeMessage } from "./constants/messages";
+import { welcomeMessage, messageSMS } from "./constants/messages";
+import sendSMS from "./services/sms";
+
+import dotenv from 'dotenv';
+
+const result = dotenv.config()
+ 
+if (result.error) {
+    console.log('Error :::: ', result.error);
+}
+ 
+console.log('Parsed :::::::', result.parsed);
 
 const app = express();
 app.use(cors());
@@ -16,6 +27,15 @@ const routes = () => {
     const { to, id, name }: { to: string, id: string, name: string } = Object.assign({}, req.body);
     
     const result = Mail({ to, subject: 'Bem vindo a Academia de Investimento', html: welcomeMessage({ id, name }) });
+
+    res.status(200).json({ 'result': result });
+  });
+
+
+  app.route("/sms/welcome").post((req, res) => {
+    const { to, id, name }: { to: string, id: string, name: string } = Object.assign({}, req.body);
+    
+    const result = sendSMS({ to, body: messageSMS({ id, name }) });
 
     res.status(200).json({ 'result': result });
   });

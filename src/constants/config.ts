@@ -5,7 +5,7 @@ export const config = {
     secure: true,
     auth: {
       user: 'geral@academiadeinvestimento.ao',
-      pass: 'j25SRtM0avMU',
+      pass: process.env.EMAIL_PASSWORD,
     },
     tls: { rejectUnauthorized: false },
   },
