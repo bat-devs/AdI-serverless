@@ -10,8 +10,6 @@ interface ISendMail {
   html: string;
 };
 
-console.log('Password :::::: ', process.env.EMAIL_PASSWORD);
-
 type TSendMail = (arg: ISendMail) => void;
 
 const SendMail: TSendMail = ({ to, subject, html }) => {

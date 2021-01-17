@@ -1,20 +1,13 @@
 import express from "express";
 import cors from "cors";
 import * as bodyParser from "body-parser";
+import dotenv from 'dotenv';
 
 import Mail from "./services/mail";
 import { welcomeMessage, messageSMS } from "./constants/messages";
 import sendSMS from "./services/sms";
 
-import dotenv from 'dotenv';
-
-const result = dotenv.config()
- 
-if (result.error) {
-    console.log('Error :::: ', result.error);
-}
- 
-console.log('Parsed :::::::', result.parsed);
+dotenv.config();
 
 const app = express();
 app.use(cors());

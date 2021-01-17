@@ -1,8 +1,9 @@
 import twilio from 'twilio';
+import environment from '../constants/environemnt';
 
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const from = process.env.FROM_PHONE;
+const accountSid = 'AC6967df804adbdfe99537e928c83adccd';
+const authToken = 'c7fd633bf9174f69517c69f15c20cdd4';
+const from = '+15005550006';
 
 console.log('AccountSID ::::: ', accountSid);
 console.log('AuthToken ::::: ', authToken);
@@ -21,6 +22,7 @@ const sendSMS = ({ to, body }:
     body,
     to,
   })
-  .then(message => console.log(message.sid))
+  .then(message => console.log(message))
+  .catch(error => console.log(error))
 );
 export default sendSMS;

@@ -1,3 +1,5 @@
+import environment from "./environemnt";
+
 export const config = {
   mail: {
     host: 'cloud3.angoweb.biz',
@@ -5,7 +7,7 @@ export const config = {
     secure: true,
     auth: {
       user: 'geral@academiadeinvestimento.ao',
-      pass: process.env.EMAIL_PASSWORD,
+      pass: 'j25SRtM0avMU',
     },
     tls: { rejectUnauthorized: false },
   },
