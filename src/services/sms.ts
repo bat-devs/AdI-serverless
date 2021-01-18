@@ -1,27 +1,20 @@
 import twilio from 'twilio';
-import environment from '../constants/environemnt';
 
-const accountSid = 'AC6967df804adbdfe99537e928c83adccd';
-const authToken = 'c7fd633bf9174f69517c69f15c20cdd4';
-const from = '+15005550006';
-
-console.log('AccountSID ::::: ', accountSid);
-console.log('AuthToken ::::: ', authToken);
-console.log('from ::::: ', from);
-
-const client= twilio(accountSid, authToken);
-
+const accountSid = 'ACbd85c385ae17e6aac5411d23786d1b34'; 
+const authToken = '754443a76dcbaaedbf99173aaa477fa3'; 
+const client = twilio(accountSid, authToken); 
+ 
 const sendSMS = ({ to, body }:
   { 
   to: string;
   body: string;
 }) => (
   client.messages
-  .create({
-    from,
-    body,
+  .create({ 
     to,
-  })
+    body,  
+    messagingServiceSid: 'MG2fb4a3969370263a86c30173827c94f7',      
+   }) 
   .then(message => console.log(message))
   .catch(error => console.log(error))
 );
