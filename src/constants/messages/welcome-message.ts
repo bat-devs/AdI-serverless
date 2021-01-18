@@ -7,7 +7,7 @@ const welcomeMessage: TWelcomeMessage = ({ name, id }) => `
   <br />
   <p>Olá ${name}, Bem vindo a academia de investimento.</p>
   <br />
-  <p>Caro cliente, o seu número de utilizador é <b>${id}</b></p>
+  <p>Caro cliente, o seu número de referência é <b>${id}</b></p>
 `;
 
 export default welcomeMessage;
